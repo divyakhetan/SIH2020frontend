@@ -1,63 +1,3 @@
-// import React, { Component } from 'react';
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-// import AppBar from 'material-ui/AppBar'
-// import TextField from 'material-ui/TextField'
-// import RaisedButton from 'material-ui/RaisedButton'
-// 
-
-
-
-// export class Dashboard extends Component {
-
-//     try = () => {
-//         this.props.history.push('/userform');
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 <MuiThemeProvider>
-
-//                 <RaisedButton
-//               label ="Fill Form"
-//               primary = {true}
-//               variant="contained"
-//             //   style = {styles.button}
-//             onClick ={this.try}
-//                 />
-//             <br/>
-//             <RaisedButton
-//               label ="Profile"
-//               primary = {true}
-//               variant="contained"
-//             //   style = {styles.button}
-//             //   onClick={this.continue}
-//             />
-//              <br/>
-//             <RaisedButton
-//               label ="Hall Ticket"
-//               primary = {true}
-//               variant="contained"
-//             //   style = {styles.button}
-//             //   onClick={this.continue}
-//             />
-//              <br/>
-//             <RaisedButton
-//               label ="Result"
-//               primary = {true}
-//               variant="contained"
-//             //   style = {styles.button}
-//             //   onClick={this.continue}
-//             />
-
-//                 </MuiThemeProvider>
-                
-//             </div>
-//         )
-//     }
-// }
-
-// export default Dashboard
 
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
@@ -73,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {Link} from 'react-router-dom';
+import RaisedButton from 'material-ui/RaisedButton'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 
 
@@ -106,26 +48,47 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  button:{
+    marginLeft: 1750
+  }
 }));
 
+function lg() {
+    return( localStorage.clear())
+  }
 
 
 export default function Dashboard() {
 
 
+
+
   const classes = useStyles();
 
   return (
+    <MuiThemeProvider>
     <React.Fragment>
+   
       <CssBaseline />
       <AppBar position="relative">
+
         <Toolbar>
           {/* <CameraIcon className={classes.icon} /> */}
           <Typography variant="h6" color="inherit" noWrap>
-            Dashboard
+            Dashboard          
+             <Link to = "/">
+          <RaisedButton
+            label ="Logout"
+            primary = {true}
+            variant="contained"
+            onClick = {lg}
+            className = {classes.button}     
+            />
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
+
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -169,7 +132,7 @@ export default function Dashboard() {
                 <Card className={classes.card}>
                 <CardMedia
                     className={classes.cardMedia}
-                    image="https://lh3.googleusercontent.com/proxy/JFauYtl2Jg4hVtxIz46XLrp1ScXtmKFP7zAFrSkWZEV0-XIEIT9xbrTLiSs2NpbsRwct1by9BuJMzf-MHsvG"
+                    image="https://lh3.googleusercontent.com/proxy/_MFs6ZYFYUoJbMwO9HPex_pR_cL9S_7Pbf9FXiEfUoVXrSEHcjiaDS7I2bQrCwOWwoeNlDlkuOW9D0WFN-3F"
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
@@ -234,9 +197,12 @@ export default function Dashboard() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-   
-      {/* End footer */}
+
+    
     </React.Fragment>
+     </MuiThemeProvider>
+
   );
 }
+
+
