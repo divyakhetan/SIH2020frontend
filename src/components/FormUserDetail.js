@@ -8,6 +8,7 @@ import MenuItem from 'material-ui/MenuItem'
 import FormGroup from '@material-ui/core/FormGroup';
 import DatePicker from 'material-ui/DatePicker';
 import Grid from '@material-ui/core/Grid'
+import {Link} from 'react-router-dom';
 
 
 export class FormUserDetails extends React.Component {
@@ -51,6 +52,18 @@ export class FormUserDetails extends React.Component {
               floatingLabelText="Last Name"
               onChange={handleChange('lastName')}
               defaultValue={values.lastName}
+            />
+            </Grid>
+            </Grid>
+            <Grid container spacing={1} justify="center">
+            <Grid item xs={12}><label>GENDER</label></Grid>
+            {/* <DatePicker hintText="Open to Year" onChange={handleDateChange('dob')} defaultDate = {values.dob}/> */}
+            <Grid item xs={12} sm={6} md={4}>
+            <TextField
+              hintText="Gender"
+              floatingLabelText="Gender"
+              onChange={handleChange('gender')}
+              defaultValue={values.gender}
             />
             </Grid>
             </Grid>
@@ -179,7 +192,14 @@ export class FormUserDetails extends React.Component {
             
             <br />
 
-          
+            <Link to = "/dashboard">
+            <RaisedButton
+                label ="Home"
+                primary = {true}
+                variant="contained"
+                style = {styles.button}
+              />
+         </Link>
 
             <RaisedButton
               label ="Continue"

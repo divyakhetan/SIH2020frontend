@@ -39,7 +39,7 @@ export class Confirm extends React.Component {
   };
   render() {
     console.log(JSON.stringify(this.props.values))
-    const { values : {firstName, lastName, salutation,fathersFirstName,fathersLastName,mothersFirstName,mothersLastName,dob,streetAdress,streetAdress2,district,state,zipcode,email,phno, signurl, aadharurl}} = this.props;
+    const { values : {firstName, lastName, salutation,fathersFirstName,fathersLastName,mothersFirstName,mothersLastName,dob,streetAdress,streetAdress2,district,state,zipcode,email,phno, signurl, aadharurl, gender}} = this.props;
     return (
       <MuiThemeProvider >
         <React.Fragment>
@@ -61,6 +61,12 @@ export class Confirm extends React.Component {
             <ListItem
              primaryText = "Last Name"
              secondaryText = {lastName}
+
+            />
+
+             <ListItem
+             primaryText = "Gender"
+             secondaryText = {gender}
 
             />
             <ListItem
