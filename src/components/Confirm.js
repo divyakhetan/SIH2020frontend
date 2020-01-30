@@ -140,17 +140,7 @@ export class Confirm extends React.Component {
 
             />
 
-             <ListItem
-             primaryText = "Signature URL"
-             secondaryText = {signurl}
-
-            />
-
-            <ListItem
-             primaryText = "Aadhar Card URL"
-             secondaryText = {aadharurl}
-
-            />
+            
             </List>
 
 

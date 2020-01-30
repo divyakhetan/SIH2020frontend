@@ -9,6 +9,7 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import UserForm from './components/UserForm';
 import HallTicket from './components/HallTicket'
+import Profile from './components/Profile'
 
 
 
@@ -27,6 +28,8 @@ class App extends React.Component {
       <Route path="/userform" component={UserForm}/>
 
       <Route path="/hallticket" component={HallTicket}/>
+
+      <Route path = "/profile" component = {Profile} />
 
         
       </div>

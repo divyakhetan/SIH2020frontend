@@ -152,7 +152,7 @@ export default function Dashboard() {
 
               
               <Grid item xs={12} sm={6} md={6}>
-              <Link to = '/hallticket'>
+              <Link to = '/profile'>
                 <Card className={classes.card}>
                 <CardMedia
                     className={classes.cardMedia}
