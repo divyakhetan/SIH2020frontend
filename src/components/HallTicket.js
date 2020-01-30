@@ -47,7 +47,8 @@ export class HallTicket extends Component {
             <React.Fragment>
 
             <AppBar title="Download HallTicket" />
-            <h1> Download your hall ticket by clicking the button below </h1>
+            <h3> Download your hall ticket by clicking the button below. </h3>
+            <h3> Please note that your details will be verified using the QR code provided in the hall ticket at the time of the examination </h3>
 			<RaisedButton
               label ="Back"
               primary = {false}

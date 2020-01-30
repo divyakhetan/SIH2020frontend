@@ -24,7 +24,7 @@ export class UserForm extends Component {
       phno:'',
       signurl:'',
       aadharurl: '', 
-      gender: ''
+      gender: '',
   };
 
   // Proceed to next step
@@ -59,20 +59,13 @@ export class UserForm extends Component {
   render() {
     const { step } = this.state;
     const { firstName, lastName, salutation,fathersFirstName,fathersLastName,mothersFirstName,mothersLastName,dob,streetAdress,streetAdress2,district,state,zipcode,email,phno, signurl, aadharurl, gender} = this.state;
-    const values = { firstName, lastName, salutation,fathersFirstName,fathersLastName,mothersFirstName,mothersLastName,dob,streetAdress,streetAdress2,district,state,zipcode,email,phno, signurl, aadharurl, gender };
+    const values = { firstName, lastName, salutation,fathersFirstName,fathersLastName,mothersFirstName,mothersLastName,dob,streetAdress,streetAdress2,district,state,zipcode,email,phno, signurl, aadharurl, gender};
     // console.log(firstName)
     switch (step) {
       case 0:
       return(console.log('hi'))
+      
       case 1:
-        return (
-          <FormUserDetail
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 2:
         return (
           <SignUrl
             nextStep={this.nextStep}
@@ -82,6 +75,16 @@ export class UserForm extends Component {
             sendUrl = {this.receiveUrl}
             sendUrl1 = {this.receiveUrl1}
 
+          />
+        );
+
+        case 2:
+        return (
+          <FormUserDetail
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
           />
         );
       case 3:

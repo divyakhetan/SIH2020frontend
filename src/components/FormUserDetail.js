@@ -17,6 +17,11 @@ export class FormUserDetails extends React.Component {
     this.props.nextStep();
   };
 
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
 
   render() {
     const { values, handleChange } = this.props;
@@ -192,14 +197,13 @@ export class FormUserDetails extends React.Component {
             
             <br />
 
-            <Link to = "/dashboard">
             <RaisedButton
-                label ="Home"
-                primary = {true}
-                variant="contained"
-                style = {styles.button}
-              />
-         </Link>
+              label ="Back"
+              primary = {false}
+              variant="contained"
+              style = {styles.button}
+              onClick={this.back}
+            />
 
             <RaisedButton
               label ="Continue"
